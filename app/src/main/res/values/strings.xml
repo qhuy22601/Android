@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CK</string>
+    <string name="trang_chu">Trang chu</string>
+
+    <string name="ban_do">Ban do</string>
+
+    <string name="khach_san">Khach san</string>
+    <string name="ca_nhan">Ca nhan</string>
+
+</resources>

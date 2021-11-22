@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="260dp"
+    android:layout_marginRight="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/placeImage1"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="96dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/unnamed"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-22dp"
+        android:text="Việt Nam"
+        app:layout_constraintStart_toStartOf="@+id/placeImage1"
+        app:layout_constraintTop_toBottomOf="@+id/placeImage1" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Huế"
+        app:layout_constraintStart_toStartOf="@+id/placeImage1"
+        app:layout_constraintTop_toBottomOf="@+id/country"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="......"
+
+        app:layout_constraintStart_toStartOf="@+id/placeImage1"
+        app:layout_constraintTop_toBottomOf="@+id/place"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
