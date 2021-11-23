@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,14 +31,19 @@ public class Home extends Fragment {
     RecentData[] recentData;
     private List<RecentData>listrecent;
     private List<TopPlacesData> listtop;
+
+    public Home(){
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.home, container,false);
 
-
-        RecyclerView recentRecylcer = (RecyclerView) view.findViewById(R.id.recent_recycler);
-        recentRecylcer.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recentRecycler = view.findViewById(R.id.recent_recycler);
+        LinearLayoutManager lel = new LinearLayoutManager(getActivity());
+        lel.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recentRecycler.setLayoutManager(lel);
 
         listrecent = new ArrayList<>();
         listrecent.add(new RecentData("hue", "vietnam", "10000", R.drawable.unnamed));
@@ -47,8 +53,8 @@ public class Home extends Fragment {
         recentAdapter = new RecentAdapter();
         recentAdapter.setReData(listrecent);
 
-        RecyclerView topPlacesRecycler = (RecyclerView) view.findViewById(R.id.topRecycler);
-        topPlacesRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        RecyclerView topRecyclerView = (RecyclerView) view.findViewById(R.id.topRecycler);
+        topRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         listtop= new ArrayList<>();
         listtop.add(new TopPlacesData("hue", "vietnam", "10000", R.drawable.unnamed));
         listtop.add(new TopPlacesData("quangtri", "vietnam", "10000", R.drawable.quangtri));

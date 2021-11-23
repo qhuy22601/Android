@@ -2,9 +2,12 @@ package com.example.ck;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.FragmentTransitionSupport;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        Home home = new Home();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frag, home);
+        fragmentTransaction.commit();
 
         navigationView= findViewById(R.id.bottom);
         viewPager= findViewById(R.id.view_pager);

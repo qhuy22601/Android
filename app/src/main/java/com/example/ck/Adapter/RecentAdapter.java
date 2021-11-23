@@ -27,18 +27,19 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentView
     public RecentAdapter() {
         this.context = context;
         this.recentDataList = recentDataList;
+
     }
 
 
     @NonNull
     @Override
     public RecentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recent_row_item, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recent_row_item, parent,false);
         return new RecentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecentAdapter.RecentViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecentViewHolder holder, int position) {
         holder.country.setText(recentDataList.get(position).getCountryName());
         holder.place.setText(recentDataList.get(position).getPlaceName());
         holder.price.setText(recentDataList.get(position).getPrice());
@@ -51,15 +52,15 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentView
         return recentDataList.size();
     }
 
-    public  static final class RecentViewHolder extends RecyclerView.ViewHolder{
+    public class RecentViewHolder extends RecyclerView.ViewHolder{
         ImageView placeImage;
         TextView place, country, price;
         public RecentViewHolder (@NonNull View itemView){
-            super((itemView));
-            placeImage = itemView.findViewById(R.id.placeImage1);
-            place = itemView.findViewById(R.id.place);
-            country = itemView.findViewById(R.id.country);
-            price = itemView.findViewById(R.id.price);
+            super(itemView);
+            placeImage = (ImageView) itemView.findViewById(R.id.placeImage1);
+            place = (TextView) itemView.findViewById(R.id.place);
+            country = (TextView) itemView.findViewById(R.id.country);
+            price = (TextView) itemView.findViewById(R.id.price);
         }
     }
 }
